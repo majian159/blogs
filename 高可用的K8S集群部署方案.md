@@ -62,9 +62,12 @@ etcd是一个采用了raft算法的分布式键值存储系统。
 | ----------- | :---: | :---: | :---: |
 | etcd   |   3   |   4 (8~16)   |  8GB (16GB~64GB)  |
 
-> 官网: <https://etcd.io/>  
-> 官方硬件建议: <https://etcd.io/docs/v3.3.12/op-guide/hardware/>  
-> Static Pod部署文档: <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/setup-ha-etcd-with-kubeadm/>  
+> **官网:**  
+> <https://etcd.io/>  
+> **官方硬件建议:**  
+> <https://etcd.io/docs/v3.3.12/op-guide/hardware/>  
+> **Static Pod部署文档:**  
+> <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/setup-ha-etcd-with-kubeadm/>  
 
 # Kubernetes集群
 kubernetes集群主要有两种类型的节点：Master和Worker。  
@@ -87,7 +90,8 @@ Master节点的高可用拓补官方给出了两种方案。
 ![](https://ws1.sinaimg.cn/large/7ecacd23ly1g6ncnb681tj21ye1a8458.jpg)
 
 ***这边大家可以根据具体的情况选择，推荐使用第二种，外部的etcd。***
-> 参考来源: <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/>
+> **参考来源:**  
+> <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/>
 
 ## Master节点的组件
 1. apiserver
@@ -106,8 +110,10 @@ Master节点的高可用拓补官方给出了两种方案。
 k8s依赖etcd所以不存在数据一致性的问题（把数据一致性压到了etcd上），所以k8s master不需要采取投票的机制来进行选举，而只需节点健康就可以成为leader。  
 所以这边master并不要求奇数，偶数也是可以的。  
 那么master高可用至少需要2个节点，失败容忍度是(n/0)+1，也就是只要有一个是健康的k8s master集群就属于可用状态。（**这边需要注意的是master依赖etcd，如果etcd不可用那么master也将不可用**）
-> Master组件说明: <https://kubernetes.io/docs/concepts/overview/components/>  
-> 部署文档: <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/>
+> **Master组件说明:**  
+> <https://kubernetes.io/docs/concepts/overview/components/>  
+> **部署文档:**  
+> <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/>
 
 ## 硬件配置
 
@@ -117,7 +123,7 @@ k8s依赖etcd所以不存在数据一致性的问题（把数据一致性压到�
 
 # 高可用验证
 至此生产可用的k8s集群已“搭建完成”。为什么打引号？因为还没有进行测试和验证，下面给出我列出的验证清单
-![](https://ws1.sinaimg.cn/large/7ecacd23ly1g6pstsx226j22160pu10r.jpg)
+![](https://ws1.sinaimg.cn/large/7ecacd23ly1g6ptptfpcij22160pujze.jpg)
 还有涉及的BGP相关的验证不在此次文章内容中，后续会为大家说明。
 
 # 写在最后
