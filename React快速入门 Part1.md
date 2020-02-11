@@ -155,10 +155,13 @@ yarn start
 - linqts
 - ......
 
-# 《React Part 1》录屏文件
-## 渠道一：优酷
+# 《React Part 1》分享视频和资料
+## 视频文件
 https://v.youku.com/v_show/id_XNDU0MTQ4Njk3Ng==.html  
-密码：jkzlReact
+密码: jkzlReact
 
+## 资料
+https://pan.baidu.com/s/1bi6Qfrv3n0cVbU23bMnRpQ  
+提取码: itdg
 # 最后
 今天我们从安装环境开始到第一个Demo，其中尽量降低了大家的学习门槛，许多React的高阶用法还没有说明，在下一节中我们会继续介绍Component、DvaJS、UmiJS、redux、样式表、自定义Hook、服务端交互等内容以助力大家可以使用TS+React开发企业级应用，敬请期待。
